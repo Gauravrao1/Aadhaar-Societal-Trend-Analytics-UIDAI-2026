@@ -159,5 +159,6 @@ Team ID: UIDAI_12041
 ## 📜 License
 
 For academic and hackathon use only.
-🧑‍💻 Author
-Gaurav Rao
+
+## 🧑‍💻 Author
+   Gaurav Rao
