@@ -49,7 +49,7 @@ class SeasonalTrendDetector:
         """
         # Aggregate by month for consistency
         monthly_data = self.data.groupby(
-            pd.Grouper(key='date', freq='M')
+            pd.Grouper(key='date', freq='ME')
         )['enrolments'].sum()
         
         # Need at least 2 complete cycles
@@ -119,7 +119,7 @@ class SeasonalTrendDetector:
         """
         # Calculate monthly totals
         monthly = self.data.groupby(
-            pd.Grouper(key='date', freq='M')
+            pd.Grouper(key='date', freq='ME')
         )['enrolments'].sum().reset_index()
         
         # Calculate z-scores
@@ -160,7 +160,7 @@ class SeasonalTrendDetector:
             'total_enrolments': int(self.data['enrolments'].sum()),
             'average_monthly_enrolments': float(
                 self.data.groupby(
-                    pd.Grouper(key='date', freq='M')
+                    pd.Grouper(key='date', freq='ME')
                 )['enrolments'].sum().mean()
             )
         }
